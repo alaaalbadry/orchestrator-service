@@ -22,7 +22,7 @@ public class OrchestratorService{
             HttpEntity<OrderRequest> request = new HttpEntity<>(orderRequest, headers);
 
             ResponseEntity<String> response = restTemplate.postForEntity(
-                    "http://localhost:8083/orders/place", request, String.class);
+                    "http://DEMO-ORDER/orders/place", request, String.class);
 
             return ResponseEntity.ok(response.getBody());
         } catch (HttpClientErrorException.Unauthorized ex) {
